@@ -6,6 +6,10 @@ class NoCountryError(Exception):
     """Raised when non-supported country is queried"""
     pass
 
+class GenderNotAllowed(Exception):
+    """Raised when non-supported gender"""
+    pass
+
 
 class Detector:
     """Get gender by first name"""
@@ -54,7 +58,7 @@ class Detector:
             elif parts[0] == "?":
                 self._set(name, u"andy", country_values)
             else:
-                raise "Not sure what to do with a sex of %s" % parts[0]
+                raise GenderNotAllowed("Not sure what to do with a sex of %s" % parts[0])
 
     def _set(self, name, gender, country_values):
         """Sets gender and relevant country values for names dictionary of detector"""
