@@ -21,11 +21,16 @@ class Detector:
                  """.split()
 
     def __init__(self,
-                 case_sensitive=True):
+                 case_sensitive=True,
+                 dict_path=None):
 
         """Creates a detector parsing given data file"""
         self.case_sensitive = case_sensitive
-        self._parse(os.path.join(os.path.dirname(__file__), "data/nam_dict.txt"))
+
+        # Be able to pass an external dictionary
+        if dict_path is None:
+            dict_path = os.path.join(os.path.dirname(__file__), "data/nam_dict.txt")
+        self._parse(dict_path)
 
     def _parse(self, filename):
         """Opens data file and for each line, calls _eat_name_line"""
