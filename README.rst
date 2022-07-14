@@ -69,7 +69,7 @@ Changelog
 ******************
 
 * Wire in ``tox`` to test in both Python 2 and Python 3.
-* Python 2 and 3 compatiblity.
+* Python 2 and 3 compatibility.
 * Remove obsolete character mapper code.
 
 For previous versions, see `sexmachine <https://github.com/ferhatelmas/sexmachine/>`_.
